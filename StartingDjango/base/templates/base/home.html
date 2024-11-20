@@ -2,7 +2,9 @@
 <h1>Home template</h1>
 <div>
   <a href="{% url 'create-room' %}">Create Room</a><br />
+  <hr />
   {% for room in rooms %}
+  <p><a href="{% url 'update-room' room.id %}">Edit Room</a>-{{room.id}}</p>
   <span>Created by @{{room.host.username}}</span>
   <h3>{{room.id}} -- <a href="{% url 'room' room.id %}">{{room.name}}</a></h3>
   <h4>{{room.topic.name}}</h4>
